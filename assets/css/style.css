@@ -732,13 +732,25 @@ a:visited {
 }
 
 .studio-area-header {
+  font-size: 1.25rem;
+  font-weight: 700;
   color: #fff;
+  text-align: center;
   background-color: #368d47;
+
+  @media (width >= 768px) {
+    font-size: 2rem;
+  }
 }
 
 .studio-area-body {
-  border: 4px solid #368d47;
+  border: 2px solid #368d47;
   border-top: none;
+
+  @media (width >= 768px) {
+    border: 4px solid #368d47;
+    border-top: none;
+  }
 }
 
 .studio-button-list {
