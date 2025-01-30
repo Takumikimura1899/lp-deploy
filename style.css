@@ -1,6 +1,7 @@
 body {
   min-width: 375px;
   max-width: 1440px;
+  margin: 0 auto;
   font-family: 'Zen Kaku Gothic Antique', serif;
   font-style: normal;
   font-weight: 400;
@@ -71,7 +72,7 @@ img {
   transform: translateX(-50%);
 
   .read-catch-title {
-    font-size: 20px;
+    font-size: clamp(1.25rem, 0.986rem + 1.13vw, 2rem);
     font-weight: 700;
     color: #000;
 
@@ -88,7 +89,7 @@ img {
 
   .read-catch-text-contents {
     margin-top: 3%;
-    font-size: 16px;
+    font-size: clamp(1rem, 0.824rem + 0.75vw, 1.5rem);
     font-weight: 500;
     color: #000;
 
@@ -214,7 +215,7 @@ img {
 }
 
 .cta-catch-title {
-  font-size: 20px;
+  font-size: clamp(1.25rem, 0.81rem + 1.88vw, 2.5rem);
   font-weight: 700;
   color: #fff;
   text-shadow: 0 0 12px #fa0;
@@ -256,7 +257,6 @@ img {
     padding: 2% 0;
 
     .cta-content-text {
-      font-size: 32px;
       font-weight: 700;
       letter-spacing: -3px;
     }
@@ -271,14 +271,14 @@ img {
 }
 
 .cta-content-text {
-  font-size: 14px;
+  font-size: clamp(0.875rem, 0.466rem + 2.05vw, 2rem);
   font-weight: 700;
   color: #000;
   text-align: center;
 }
 
 .cta-content-list {
-  font-size: 12px;
+  font-size: clamp(0.75rem, 0.659rem + 0.45vw, 1rem);
   font-weight: 500;
 
   li {
@@ -520,7 +520,7 @@ img {
 
 .en-label {
   font-family: Sen, serif;
-  font-size: 12px;
+  font-size: clamp(0.75rem, 0.574rem + 0.75vw, 1.25rem);
   font-style: normal;
   font-weight: 600;
   font-optical-sizing: auto;
