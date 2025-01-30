@@ -473,7 +473,11 @@ a:visited {
   }
 
   .mask-campaign-title {
-    max-width: 612px;
+    max-width: 306px;
+
+    @media (width >= 768px) {
+      max-width: 612px;
+    }
   }
 
   .campaign-flow-container {
@@ -492,7 +496,11 @@ a:visited {
   }
 
   .campaign-flow-image {
-    max-width: 626px;
+    max-width: 332px;
+
+    @media (width >= 768px) {
+      max-width: 626px;
+    }
   }
 }
 
