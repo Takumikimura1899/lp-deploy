@@ -823,6 +823,31 @@ a:visited {
   }
 }
 
+.studio-meta {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  @media (width >= 768px) {
+    font-size: 1.25rem;
+  }
+
+  .googlemap-link {
+    margin-left: 0.3rem;
+    font-size: 0.7em;
+    color: #00000080;
+    text-decoration: underline;
+    white-space: nowrap;
+
+    &:hover {
+      text-decoration: none;
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+}
+
 .studio-info-image-container {
   display: flex;
   flex-direction: column;
