@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&family=Zen+Kaku+Gothic+Antique&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Sen:wght@400..800&family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="reset.css" />
@@ -67,7 +67,7 @@
             <div class="read-catch-container">
               <p class="en-label">new lecture</p>
               <h2 class="read-catch-title">花粉症すっきりヨガとは？</h2>
-              <p>
+              <p class="read-catch-text-contents">
                 季節特有の不快感にお悩みの方へ、<br />肺や腸など体の内側からアプローチをし、<br />
                 根本から花粉症に負けない<br />身体づくりを目指すレッスンです。
               </p>
@@ -84,6 +84,7 @@
                 width="347"
                 height="246"
                 loading="lazy"
+                class="read-menu-img"
               />
             </div>
           </div>
@@ -92,28 +93,32 @@
               <source srcset="./assets/img/sec-cta-pc.webp" media="(min-width: 768px)" />
               <img class="bg" src="./assets/img/sec-cta-sp.webp" alt="" width="750" height="1276" />
             </picture>
-            <div class="cta-catch">
+
+            <div class="cta-catch-container">
               <div class="cta-catch-inner">
-                <h3 class="cta-catch-title">
-                  ロイブのホットヨガは<br />
-                  <span class="cta-catch-title-span">手ぶらで体験OK </span>
-                </h3>
-                <div class="thumbs-up-container">
-                  <img
-                    src="./assets/img/icon/thumbs-up.svg"
-                    alt=""
-                    class="icon thumbs-up"
-                    width="65"
-                    height="62"
-                  />
-                  <img
-                    src="./assets/img/icon/star.svg"
-                    alt=""
-                    class="icon star"
-                    width="54"
-                    height="51"
-                  />
+                <div class="cta-catch">
+                  <h3 class="cta-catch-title">
+                    ロイブのホットヨガは<br />
+                    <span class="cta-catch-title-span">手ぶらで体験OK </span>
+                  </h3>
+                  <div class="thumbs-up-container">
+                    <img
+                      src="./assets/img/icon/thumbs-up.svg"
+                      alt=""
+                      class="icon thumbs-up"
+                      width="65"
+                      height="62"
+                    />
+                    <img
+                      src="./assets/img/icon/star.svg"
+                      alt=""
+                      class="icon star"
+                      width="54"
+                      height="51"
+                    />
+                  </div>
                 </div>
+
                 <div class="price-zero-container">
                   <img
                     class="price-zero"
@@ -133,69 +138,116 @@
                   />
                 </div>
               </div>
-            </div>
-            <div class="cta-content-container">
-              <p class="cta-content-text has-dot">
-                <span>必要なものは</span>
-                <span class="top-dot">全</span>
-                <span class="top-dot">て</span>
-                <span class="top-dot">ご</span>
-                <span class="top-dot">用</span>
-                <span class="top-dot">意</span>
-                <span>します！</span>
-              </p>
-              <img
-                class="cta-content-item-1"
-                src="./assets/img/cta-content-item-1.webp"
-                alt=""
-                width="163"
-                height="136"
-                loading="lazy"
-              />
-              <ul class="cta-content-list">
-                <li>上下ウェア</li>
-                <li>バスタオル</li>
-                <li>フェイスタオル</li>
-                <li>ヨガマット</li>
-                <li>水2本セット</li>
-              </ul>
-            </div>
-            <div class="cta-button-wrapper">
-              <img
-                class="cta-button"
-                src="./assets/img/cta-button.webp"
-                alt="体験する店舗を探す"
-                width="420"
-                height="95"
-              />
+              <div class="cta-content-container">
+                <p class="cta-content-text">
+                  <span>必要なものは</span>
+                  <span class="top-dot">全</span>
+                  <span class="top-dot">て</span>
+                  <span class="top-dot">ご</span>
+                  <span class="top-dot">用</span>
+                  <span class="top-dot">意</span>
+                  <span>します！</span>
+                </p>
+
+                <div class="content-container">
+                  <img
+                    class="cta-content-item-1"
+                    src="./assets/img/cta-content-item-1.webp"
+                    alt=""
+                    width="163"
+                    height="136"
+                    loading="lazy"
+                  />
+                  <ul class="cta-content-list">
+                    <li>上下ウェア</li>
+                    <li>バスタオル</li>
+                    <li>フェイスタオル</li>
+                    <li>ヨガマット</li>
+                    <li>水2本セット</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="cta-button-wrapper">
+                <img
+                  class="cta-button"
+                  src="./assets/img/cta-button.webp"
+                  alt="体験する店舗を探す"
+                  width="420"
+                  height="95"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section>
-        <picture>
-          <source srcset="./assets/img/kahun-image-pc.webp" media="(min-width: 768px)" />
-          <img
-            src="./assets/img/kahun-image-sp.webp"
-            alt=""
-            width="750"
-            height="720"
-            loading="lazy"
-          />
-        </picture>
-        <h2 class="kahun-title">開講の理由</h2>
-        <p>
-          花粉症は年々増加傾向にあり、 今では日本人の約3人に1人が症状を感じていると言われています。
-        </p>
-        <p>
-          原因には、生活環境の変化や空気の乾燥、ストレス、汚染物質の影響など、さまざまな要因が考えられます。
-          くしゃみや鼻づまりといった症状に加え、体の重だるさや集中力の低下、気分の不調を訴える方も少なくありません
-        </p>
-        <p>
-          ロイブでは、日々の生活で取り入れやすい呼吸と姿勢を
-          整えるレッスンを通じて、体の内側からスッキリし、
-          毎日を快適に過ごせる体づくりをサポートします。
-        </p>
+      <section class="kahun-wrapper">
+        <div class="sp-only">
+          <p class="sub-title">REASON</p>
+          <h2 class="kahun-title">開講の理由</h2>
+          <p class="kahun-content">
+            花粉症は年々増加傾向にあり、今では日本人の
+            <span class="highlight">約3人に1人が症状を感じている</span>と言われています。
+            原因には、生活環境の変化や空気の乾燥、ストレス、汚染物質の影響など、さまざまな要因が考えられます。
+            くしゃみや鼻づまりといった症状に加え、体の重だるさや集中力の低下、気分の不調を訴える方も少なくありません
+          </p>
+
+          <picture>
+            <source
+              srcset="./assets/img/kahun-image-pc.webp"
+              media="(min-width: 768px)"
+              class="kahun-image"
+            />
+            <img
+              src="./assets/img/kahun-image-sp.webp"
+              alt=""
+              width="750"
+              height="720"
+              loading="lazy"
+              class="kahun-image"
+            />
+          </picture>
+
+          <p class="kahun-content">
+            ロイブでは、日々の生活で取り入れやすい呼吸と姿勢を
+            整えるレッスンを通じて、体の内側からスッキリし、
+            <span class="highlight">毎日を快適に過ごせる体づくり</span>をサポートします。
+          </p>
+        </div>
+
+        <div class="pc-only">
+          <picture>
+            <source
+              srcset="./assets/img/kahun-image-pc.webp"
+              media="(min-width: 768px)"
+              class="kahun-image"
+            />
+            <img
+              src="./assets/img/kahun-image-sp.webp"
+              alt=""
+              width="750"
+              height="720"
+              loading="lazy"
+              class="kahun-image"
+            />
+          </picture>
+          <p class="sub-title">REASON</p>
+          <h2 class="kahun-title">開講の理由</h2>
+          <p class="kahun-content">
+            花粉症は年々増加傾向にあり、<br />
+            <span class="highlight">今では日本人の約3人に1人が症状を感じている</span
+            >と言われています。
+          </p>
+          <p class="kahun-content">
+            原因には、生活環境の変化や空気の乾燥、ストレス、汚染物質の影響など、さまざまな要因が考えられます。<br />
+            くしゃみや鼻づまりといった症状に加え、体の重だるさや集中力の低下、気分の不調を訴える方も少なくありません
+          </p>
+
+          <p class="kahun-content">
+            ロイブでは、日々の生活で取り入れやすい呼吸と姿勢を<br />
+            整えるレッスンを通じて、体の内側からスッキリし、<br />
+            <span class="highlight">毎日を快適に過ごせる体づくり</span>をサポートします。
+          </p>
+        </div>
       </section>
       <section>
         <picture>
