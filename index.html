@@ -947,8 +947,9 @@
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const accordionHeaders = document.querySelectorAll('.faq-accordion-header');
+        const activeIndex = 0;
 
-        accordionHeaders.forEach((header) => {
+        accordionHeaders.forEach((header, index) => {
           header.addEventListener('click', () => {
             const content = header.nextElementSibling;
 
@@ -969,6 +970,12 @@
               content.style.maxHeight = content.scrollHeight + 'px';
             }
           });
+
+          if (index === activeIndex) {
+            header.classList.add('active');
+            header.nextElementSibling.style.maxHeight =
+              header.nextElementSibling.scrollHeight + 'px';
+          }
         });
       });
     </script>
