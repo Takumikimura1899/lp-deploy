@@ -482,6 +482,7 @@ button {
 
 .studio-area-body {
   border: 4px solid #368d47;
+  border-top: none;
 }
 
 .studio-button-list {
