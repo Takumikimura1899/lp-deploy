@@ -974,3 +974,49 @@ footer {
     text-align: center;
   }
 }
+
+.cta-button.pulse {
+  position: relative; /* 擬似要素の基準位置 */
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* 画像の後ろに配置 */
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: #f50; /* 拡散する色 */
+    border-radius: 50px; /* 丸くする */
+    opacity: 0; /* 初期状態は透明 */
+    animation: pulse 1.5s ease-out infinite; /* アニメーションの設定 */
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.8); /* 初期サイズを小さく */
+  }
+
+  50% {
+    opacity: 0.5; /* 中間地点で最も濃く */
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.2); /* 最終的に大きくして消える */
+  }
+}
