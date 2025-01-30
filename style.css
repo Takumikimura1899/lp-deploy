@@ -177,6 +177,39 @@ img {
   }
 }
 
+/* doctor section */
+.section-doctor {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 10rem 5rem;
+
+  & > * {
+    flex: 1;
+  }
+
+  @media (width >= 768px) {
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  .doctor-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .doctor-image {
+    max-width: 332px;
+  }
+
+  .doctor-column-title {
+    padding: 0.5em;
+    font-weight: 700;
+    background-color: #f6f6f6;
+  }
+}
+
 /* ui parts */
 .logo {
   width: 24px;
