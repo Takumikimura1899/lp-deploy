@@ -115,9 +115,16 @@ img {
 }
 
 .read-menu-img {
-  max-width: 300px;
+  max-width: 180px;
   margin-left: -2%;
-  scale: 1.2;
+}
+
+@media (width >= 768px) {
+  .read-menu-img {
+    max-width: 300px;
+    margin-left: -2%;
+    scale: 1.2;
+  }
 }
 
 .read-menu-title {
@@ -469,7 +476,7 @@ img {
 
   .star {
     top: -10%;
-    left: 25%;
+    left: 8%;
     opacity: 0;
     animation: starFade 2s ease-in-out infinite;
   }
