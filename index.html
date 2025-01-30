@@ -845,10 +845,78 @@
           </a>
         </div>
       </section>
+      <section class="section-faq">
+        <div class="section-title-container">
+          <p class="en-label">faq</p>
+          <h2 class="section-title">よくある質問</h2>
+        </div>
+        <div class="faq-accordion-list">
+          <div class="faq-accordion">
+            <h3 class="faq-accordion-header">
+              <button><span>アコーディオン1</span><span class="icon"></span></button>
+            </h3>
+            <div class="faq-accordion-body">
+              <p>text</p>
+            </div>
+          </div>
+          <div class="faq-accordion">
+            <h3 class="faq-accordion-header">
+              <button><span>アコーディオン1</span><span class="icon"></span></button>
+            </h3>
+            <div class="faq-accordion-body">
+              <p>text</p>
+            </div>
+          </div>
+          <div class="faq-accordion">
+            <h3 class="faq-accordion-header">
+              <button><span>アコーディオン1</span><span class="icon"></span></button>
+            </h3>
+            <div class="faq-accordion-body">
+              <p>text</p>
+            </div>
+          </div>
+          <div class="faq-accordion">
+            <h3 class="faq-accordion-header">
+              <button><span>アコーディオン1</span><span class="icon"></span></button>
+            </h3>
+            <div class="faq-accordion-body">
+              <p>text</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- 仮の余白 -->
       <div style="height: 2000px" class="blank"></div>
     </main>
     <script defer src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const accordionHeaders = document.querySelectorAll('.faq-accordion-header');
+
+        accordionHeaders.forEach((header) => {
+          header.addEventListener('click', () => {
+            const content = header.nextElementSibling;
+
+            // クリックされたヘッダーに active クラスをトグル
+            header.classList.toggle('active');
+
+            // 他のアコーディオンを閉じる処理 (オプション)
+            accordionHeaders.forEach((otherHeader) => {
+              if (otherHeader !== header) {
+                otherHeader.classList.remove('active');
+                otherHeader.nextElementSibling.style.maxHeight = null;
+              }
+            });
+
+            if (content.style.maxHeight) {
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + 'px';
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
