@@ -767,12 +767,16 @@ a:visited {
 
 .studio-button {
   padding: 2px 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.75;
   background-color: #f6f6f6;
   border-radius: 4px;
   box-shadow: 1px 1px 4px 0 #00000040;
 
   @media (width >= 768px) {
     padding: 4px 20px;
+    font-size: 1.5rem;
     border-radius: 8px;
     box-shadow: 2px 2px 8px 0 #00000040;
   }
