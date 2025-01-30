@@ -160,6 +160,23 @@ img {
   width: 200px;
 }
 
+/* sev section */
+.sev-point-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 5rem;
+  background-color: #f6fff7;
+
+  .sev-point-content {
+    flex: 1;
+  }
+
+  @media (width >= 768px) {
+    flex-direction: row;
+  }
+}
+
 /* ui parts */
 .logo {
   width: 24px;
