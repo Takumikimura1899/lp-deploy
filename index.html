@@ -951,7 +951,7 @@
             <div class="studio-area-body">
               <ul class="studio-button-list">
                 <li>
-                  <button class="studio-button active" data-studio="jiyugaoka">自由が丘店</button>
+                  <button class="studio-button" data-studio="jiyugaoka">自由が丘店</button>
                 </li>
                 <li><button class="studio-button" data-studio="ikebukuro">池袋店</button></li>
                 <li><button class="studio-button" data-studio="machida">町田店</button></li>
@@ -969,8 +969,14 @@
                   </button>
                 </li>
               </ul>
-              <div class="studio-info-container">
-                <button class="close-button">×</button>
+              <div
+                class="studio-info-container"
+                id="studio-info-container-jiyugaoka"
+                style="display: none"
+              >
+                <button class="close-button" data-target="studio-info-container-jiyugaoka">
+                  ×
+                </button>
                 <div class="studio-info" id="jiyugaoka">
                   <h4 class="studio-info-title">loIve 自由が丘店</h4>
                   <div class="studio-meta">
@@ -1004,39 +1010,83 @@
                     </a>
                   </div>
                 </div>
-                <div class="studio-info" id="ikebukuro">
-                  <h4 class="studio-info-title">loIve 池袋店</h4>
-                  <div class="studio-meta">
-                    <p>アクセス：自由が丘駅【南口】徒歩2分</p>
-                    <p>営業時間：9:30～22:00</p>
-                    <p>定休日：毎週月曜日</p>
-                    <p>
-                      住所：〒158-0083 東京都世田谷区奥沢5-25-7 アポラン自由が丘3、4階
-                      <a href="#" target="_blank">[GoogleMAPで見る]</a>
-                    </p>
-                  </div>
-                  <div class="studio-info-image-container">
-                    <p class="text">【3ヶ月間通い放題】月額1,980円(税込)</p>
-                    <a href="#">
-                      <img
-                        src="./assets/img/studio-cta-button.webp"
-                        alt="この店舗で体験予約"
-                        width="480"
-                        height="102"
-                        loading="lazy"
-                      />
-                    </a>
-                    <a href="tel:0570666969">
-                      <img
-                        src="./assets/img/studio-call-button.webp"
-                        alt="お電話でのご予約"
-                        width="480"
-                        height="102"
-                        loading="lazy"
-                      />
-                    </a>
-                  </div>
-                </div>
+              </div>
+
+              <div
+                class="studio-info-container"
+                id="studio-info-container-ikebukuro"
+                style="display: none"
+              >
+                <button class="close-button" data-target="studio-info-container-ikebukuro">
+                  ×
+                </button>
+                <div class="studio-info" id="ikebukuro"></div>
+              </div>
+              <div
+                class="studio-info-container"
+                id="studio-info-container-machida"
+                style="display: none"
+              >
+                <button class="close-button" data-target="studio-info-container-machida">×</button>
+                <div class="studio-info" id="machida"></div>
+              </div>
+              <div
+                class="studio-info-container"
+                id="studio-info-container-fujimino"
+                style="display: none"
+              >
+                <button class="close-button" data-target="studio-info-container-fujimino">×</button>
+                <div class="studio-info" id="fujimino"></div>
+              </div>
+              <div
+                class="studio-info-container"
+                id="studio-info-container-kamisato"
+                style="display: none"
+              >
+                <button class="close-button" data-target="studio-info-container-kamisato">×</button>
+                <div class="studio-info" id="kamisato"></div>
+              </div>
+              <div
+                class="studio-info-container"
+                id="studio-info-container-mito"
+                style="display: none"
+              >
+                <button class="close-button" data-target="studio-info-container-mito">×</button>
+                <div class="studio-info" id="mito"></div>
+              </div>
+              <div
+                class="studio-info-container"
+                id="studio-info-container-koga"
+                style="display: none"
+              >
+                <button class="close-button" data-target="studio-info-container-koga">×</button>
+                <div class="studio-info" id="koga"></div>
+              </div>
+              <div
+                class="studio-info-container"
+                id="studio-info-container-oyama"
+                style="display: none"
+              >
+                <button class="close-button" data-target="studio-info-container-oyama">×</button>
+                <div class="studio-info" id="oyama"></div>
+              </div>
+              <div
+                class="studio-info-container"
+                id="studio-info-container-maebashi"
+                style="display: none"
+              >
+                <button class="close-button" data-target="studio-info-container-maebashi">×</button>
+                <div class="studio-info" id="maebashi"></div>
+              </div>
+              <div
+                class="studio-info-container"
+                id="studio-info-container-shinmaebashi"
+                style="display: none"
+              >
+                <button class="close-button" data-target="studio-info-container-shinmaebashi">
+                  ×
+                </button>
+                <div class="studio-info" id="shinmaebashi"></div>
               </div>
             </div>
           </article>
@@ -1082,36 +1132,48 @@
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const studioButtons = document.querySelectorAll('.studio-button');
-        const studioInfos = document.querySelectorAll('.studio-info');
-        const studioInfoContainer = document.querySelector('.studio-info-container');
-        const closeButton = document.querySelector('.close-button');
+        const studioInfoContainers = document.querySelectorAll('.studio-info-container');
+        const closeButtons = document.querySelectorAll('.close-button');
 
-        const initiallyActive = document.querySelector('.store-button.active');
-        if (!initiallyActive) {
-          studioInfoContainer.style.display = 'none';
-        }
+        const initiallyActiveStudio = 'jiyugaoka';
 
         studioButtons.forEach((button) => {
           button.addEventListener('click', () => {
             studioButtons.forEach((btn) => btn.classList.remove('active'));
             button.classList.add('active');
+            studioInfoContainers.forEach((container) => (container.style.display = 'none'));
 
-            studioInfos.forEach((info) => {
-              info.style.display = 'none';
-            });
+            const targetContainerId = `studio-info-container-${button.dataset.studio}`;
+            const targetContainer = document.getElementById(targetContainerId);
+            if (targetContainer) {
+              targetContainer.style.display = 'block';
+            }
+          });
 
-            const storeId = button.dataset.studio;
-            document.getElementById(storeId).style.display = 'block';
+          if (button.dataset.studio === initiallyActiveStudio) {
+            button.classList.add('active');
+          }
+        });
 
-            studioInfoContainer.style.display = 'block';
+        closeButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            const targetContainerId = button.dataset.target;
+            const targetContainer = document.getElementById(targetContainerId);
+
+            if (targetContainer) {
+              targetContainer.style.display = 'none';
+            }
+
+            studioButtons.forEach((btn) => btn.classList.remove('active'));
           });
         });
 
-        closeButton.addEventListener('click', () => {
-          studioInfos.forEach((info) => (info.style.display = 'none'));
-          studioButtons.forEach((btn) => btn.classList.remove('active'));
-          studioInfoContainer.style.display = 'none';
-        });
+        const initiallyActiveContainer = document.getElementById(
+          `studio-info-container-${initiallyActiveStudio}`,
+        );
+        if (initiallyActiveContainer) {
+          initiallyActiveContainer.style.display = 'block';
+        }
       });
     </script>
   </body>
