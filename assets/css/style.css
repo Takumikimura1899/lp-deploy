@@ -5,7 +5,8 @@ body {
   font-family: 'Zen Kaku Gothic Antique', serif;
   font-style: normal;
   font-weight: 400;
-  letter-spacing: normal;
+  line-height: 1.75;
+  letter-spacing: 0.03em;
 }
 
 img {
@@ -802,6 +803,24 @@ a:visited {
   right: 8%;
   font-size: 1.2rem;
   font-weight: 900;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.studio-info-title {
+  display: inline;
+  padding: 2px 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #368d47;
+
+  @media (width >= 768px) {
+    padding: 4px 16px;
+    font-size: 1.5rem;
+  }
 }
 
 .studio-info-image-container {
