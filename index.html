@@ -845,10 +845,139 @@
           </a>
         </div>
       </section>
+      <section class="section-faq">
+        <div class="section-title-container">
+          <p class="en-label">faq</p>
+          <h2 class="section-title">よくある質問</h2>
+        </div>
+        <div class="faq-accordion-list">
+          <div class="faq-accordion">
+            <h3 class="faq-accordion-header">
+              <button>
+                <span>体験レッスンの持ち物はなんですか？</span><span class="icon"></span>
+              </button>
+            </h3>
+            <div class="faq-accordion-body">
+              <div class="body-inner">
+                <p>
+                  手ぶらでヨガ体験レッスンは、
+                  <br />
+                  以下のものがセットになっております。
+                </p>
+              </div>
+              <div class="body-inner">
+                レンタルウェア上下
+                <br />
+                水550ml×2本
+                <br />
+                バスタオル
+                <br />
+                ヨガマット
+                <br />
+                フェイスタオル
+              </div>
+              <div class="body-inner">
+                スタジオ内は汗をかきやすい環境となっておりますので、シャワー後の替えの下着とバスタオルをご用意いただくことをおすすめいたします。
+              </div>
+            </div>
+          </div>
+          <div class="faq-accordion">
+            <h3 class="faq-accordion-header">
+              <button>
+                <span>体験ではどのレッスンが受けられますか？</span><span class="icon"></span>
+              </button>
+            </h3>
+            <div class="faq-accordion-body">
+              <div class="body-inner">
+                <p>
+                  20種類以上のレッスンからお選びいただけます。予約ページで選択できるレッスンは申し込みが可能です。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-accordion">
+            <h3 class="faq-accordion-header">
+              <button>
+                <span>当日はどれくらい時間が必要ですか？</span><span class="icon"></span>
+              </button>
+            </h3>
+            <div class="faq-accordion-body">
+              <div class="body-inner">
+                <p>
+                  レッスン開始前の20分前にご来店いただき、体調チェックの簡単な用紙の記入、館内説明がございます。レッスン後にシャワー、お着替え、レッスンのご案内など含めて、約2時間程度のお時間を見ていただいております。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-accordion">
+            <h3 class="faq-accordion-header">
+              <button>
+                <span>続けたい場合、必要な持ち物はありますか？</span><span class="icon"></span>
+              </button>
+            </h3>
+            <div class="faq-accordion-body">
+              <div class="body-inner">
+                下記のものをお持ちいただきましたら、その場ですぐ登録手続きすることができます。
+                <br />
+                体験レッスン当日に入会いただきますとお得な特典もございます。
+              </div>
+              <div class="body-inner">
+                <ul class="body-list">
+                  <li>金融機関のキャッシュカード</li>
+                  <li>ご本人様確認ができる身分証明書<br />（運転免許証・健康保険証など）</li>
+                  <li>月会費（2か月分）※施設維持費を含む</li>
+                  <li>施設利用料2,530円（税込）</li>
+                </ul>
+              </div>
+              <div class="body-inner">
+                <small>
+                  ※金融機関のキャッシュカードをお持ちでない場合は、代わりに金融機関届出印と、郵便局または銀行の通帳をお持ちください。
+                </small>
+                <small>※登録時に必要な月会費は、ご登録日によって異なります。</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- 仮の余白 -->
       <div style="height: 2000px" class="blank"></div>
     </main>
     <script defer src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const accordionHeaders = document.querySelectorAll('.faq-accordion-header');
+        const activeIndex = 0;
+
+        accordionHeaders.forEach((header, index) => {
+          header.addEventListener('click', () => {
+            const content = header.nextElementSibling;
+
+            // クリックされたヘッダーに active クラスをトグル
+            header.classList.toggle('active');
+
+            // 他のアコーディオンを閉じる処理 (オプション)
+            accordionHeaders.forEach((otherHeader) => {
+              if (otherHeader !== header) {
+                otherHeader.classList.remove('active');
+                otherHeader.nextElementSibling.style.maxHeight = null;
+              }
+            });
+
+            if (content.style.maxHeight) {
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + 'px';
+            }
+          });
+
+          if (index === activeIndex) {
+            header.classList.add('active');
+            header.nextElementSibling.style.maxHeight =
+              header.nextElementSibling.scrollHeight + 'px';
+          }
+        });
+      });
+    </script>
   </body>
 </html>
