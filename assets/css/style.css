@@ -406,15 +406,79 @@ main {
 .sev-point-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 5rem;
+  gap: 3rem;
+  padding: 5rem 1rem;
   background-color: #f6fff7;
 
-  .sev-point-content {
-    flex: 1;
+  @media (width >= 1024px) {
+    gap: 1rem;
+    padding: 5rem 3rem;
   }
 
-  @media (width >= 768px) {
+  .sev-point-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+
+    .section-title-container {
+      order: 0;
+
+      @media (width >= 1024px) {
+        width: 100%;
+      }
+
+      .section-title {
+        @media (1200px >= width >= 1024px) {
+          font-size: 1.3rem;
+        }
+
+        @media (width >= 1200px) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .sev-point-image-container {
+      order: 1;
+      width: fit-content;
+
+      @media (width >= 1024px) {
+        order: 4;
+
+        img {
+          max-width: 260px;
+        }
+      }
+    }
+
+    .sev-point-catch {
+      order: 2;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #000;
+
+      @media (width >= 1024px) {
+        order: 1;
+        height: 70px;
+      }
+    }
+
+    .sev-point-description {
+      flex-grow: 1;
+      order: 3;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #000;
+
+      @media (width >= 1024px) {
+        order: 2;
+      }
+    }
+  }
+
+  @media (width >= 1024px) {
     flex-direction: row;
   }
 }
@@ -1110,5 +1174,30 @@ footer {
     height: 0.6em;
     content: '';
     background-color: #fef1004d;
+  }
+}
+
+.section-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  .en-label {
+    font-family: Sen, serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    @media {
+      font-size: 1.5rem;
+    }
+  }
+
+  .section-title {
+    padding: 0 0.5em;
+    font-size: clamp(1.25rem, 0.986rem + 1.13vw, 2rem);
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(to right, #368d47, #82cb5b);
   }
 }
