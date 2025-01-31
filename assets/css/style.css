@@ -1211,12 +1211,28 @@ footer {
 
 .sec-cta-three-content-container {
   position: absolute;
-  top: 43%;
-  left: 0;
+  top: 25%;
   width: 100%;
 
   img {
-    width: 65%;
+    width: 80%;
     margin: 0 auto;
+  }
+
+  @media (width >= 768px) {
+    top: 43%;
+    left: 0;
+    width: 100%;
+
+    img {
+      width: 65%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.sta-section {
+  .cta-button-wrapper {
+    bottom: 5%;
   }
 }
