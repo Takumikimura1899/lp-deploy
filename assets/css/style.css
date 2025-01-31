@@ -214,7 +214,7 @@ main {
     transform: translateX(-50%);
 
     @media (width >= 768px) {
-      bottom: 7%;
+      bottom: 5%;
     }
   }
 }
@@ -324,7 +324,13 @@ main {
   .price-zero-container {
     position: relative;
     width: fit-content;
+    width: 50%;
+    min-width: 200px;
     margin-top: 8px;
+
+    @media (width >= 768px) {
+      width: 40%;
+    }
 
     .price-zero-message {
       position: absolute;
@@ -356,10 +362,6 @@ main {
   font-weight: 700;
   color: #fff;
   text-shadow: 0 0 12px #fa0;
-
-  @media (width >= 768px) {
-    font-size: 40px;
-  }
 }
 
 .cta-catch-title-span {
@@ -376,27 +378,13 @@ main {
   right: 0;
   bottom: 26%;
   left: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
   width: 90%;
-  height: auto;
-  padding: 20px;
   margin: 0 auto;
-  background: #fff;
-  border-radius: 20px;
 
   @media (width >= 768px) {
-    flex-direction: row;
-    gap: 40px;
-    align-items: center;
-    justify-content: center;
-    padding: 2% 0;
-
-    .cta-content-text {
-      font-weight: 700;
-      letter-spacing: -3px;
-    }
+    bottom: 23%;
+    width: 80%;
+    max-width: 1040px;
   }
 }
 
