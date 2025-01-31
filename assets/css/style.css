@@ -577,13 +577,18 @@ main {
 
 /* about section */
 .about-section {
-  padding: 5rem 0;
+  padding: 5rem 2rem;
   color: #fff;
   background-color: #3c3c3c;
 
   .about-section-title {
-    padding: 0.5em 1em;
-    font-size: 2rem;
+    padding: 0 0.5em;
+    font-size: 1.25rem;
+
+    @media (width >= 768px) {
+      font-size: 2rem;
+    }
+
     font-weight: 700;
     background-color: #e46c07;
   }
