@@ -424,6 +424,7 @@ main {
 
     .section-title-container {
       order: 0;
+      margin-bottom: 0;
 
       @media (width >= 1024px) {
         width: 100%;
@@ -1181,12 +1182,18 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 40px;
   text-align: center;
+
+  @media (width >= 768px) {
+    margin-bottom: 80px;
+  }
 
   .en-label {
     font-family: Sen, serif;
     font-size: 0.75rem;
     font-weight: 600;
+    color: #368d47;
 
     @media {
       font-size: 1.5rem;
@@ -1199,5 +1206,17 @@ footer {
     font-weight: 700;
     color: #fff;
     background: linear-gradient(to right, #368d47, #82cb5b);
+  }
+}
+
+.sec-cta-three-content-container {
+  position: absolute;
+  top: 43%;
+  left: 0;
+  width: 100%;
+
+  img {
+    width: 65%;
+    margin: 0 auto;
   }
 }
