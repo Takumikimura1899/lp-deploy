@@ -211,10 +211,42 @@ main {
     position: absolute;
     bottom: 10%;
     left: 50%;
+    width: 320px;
     transform: translateX(-50%);
 
-    @media (width >= 768px) {
+    @media (767px >= width >= 500px) {
       bottom: 5%;
+      width: 450px;
+    }
+
+    @media (1024px >= width >= 768px) {
+      bottom: 1%;
+      width: 500px;
+
+      .cta-button {
+        width: 100%;
+
+        &.pulse {
+          &::before {
+            border-radius: 100px;
+          }
+        }
+      }
+    }
+
+    @media (width >= 1024px) {
+      bottom: 5%;
+      width: 640px;
+
+      .cta-button {
+        width: 100%;
+
+        &.pulse {
+          &::before {
+            border-radius: 100px;
+          }
+        }
+      }
     }
   }
 }
@@ -1397,6 +1429,10 @@ footer {
 .sta-section {
   .cta-button-wrapper {
     bottom: 5%;
+
+    @media (1024px >= width >= 768px) {
+      bottom: 3%;
+    }
   }
 
   .sta-position {
