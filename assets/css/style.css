@@ -196,7 +196,6 @@ main {
 }
 
 .read-container-inner-second {
-  z-index: -1;
   margin-top: -12%;
 
   @media (width >= 768px) {
