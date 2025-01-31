@@ -577,13 +577,18 @@ main {
 
 /* about section */
 .about-section {
-  padding: 5rem 0;
+  padding: 5rem 2rem;
   color: #fff;
   background-color: #3c3c3c;
 
   .about-section-title {
-    padding: 0.5em 1em;
-    font-size: 2rem;
+    padding: 0 0.5em;
+    font-size: 1.25rem;
+
+    @media (width >= 768px) {
+      font-size: 2rem;
+    }
+
     font-weight: 700;
     background-color: #e46c07;
   }
@@ -610,11 +615,24 @@ main {
 
       .about-section-description-container {
         grid-row-start: 2;
+        font-size: 0.875rem;
+        font-weight: 500;
+
+        @media (width >= 768px) {
+          width: 70%;
+          margin: 0 auto;
+          font-size: 1rem;
+        }
       }
 
       .about-section-image-container {
         grid-row: span 2;
         grid-column: 2/3;
+
+        @media (width >= 768px) {
+          display: flex;
+          justify-content: center;
+        }
       }
     }
   }
@@ -623,6 +641,7 @@ main {
 /* other program section */
 .other-program-section {
   width: 89.3%;
+  padding: 5rem 0;
   margin: 0 auto;
 
   @media (width >= 768px) {
@@ -658,6 +677,25 @@ main {
     margin-right: 10px;
     margin-bottom: 10px;
     margin-left: auto;
+  }
+}
+
+.other-program-title {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+
+  @media (width >= 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+.other-program-description {
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  @media (width >= 768px) {
+    font-size: 0.875rem;
   }
 }
 
@@ -814,6 +852,7 @@ main {
 
 .faq-accordion-body {
   max-height: 0;
+  margin-top: 1rem;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
 }
@@ -829,6 +868,8 @@ main {
     width: 100%;
     padding: 0;
     padding-right: 40px;
+    font-size: clamp(1rem, 0.824rem + 0.75vw, 1.5rem);
+    font-weight: 700;
     background-color: transparent;
     border: none;
   }
@@ -876,8 +917,31 @@ main {
 
 /* studio section */
 .section-studio {
-  padding: 5rem;
+  padding: 5rem 1rem;
   background-color: #f6f6f6;
+
+  @media (width >= 768px) {
+    padding: 5rem 3rem;
+  }
+
+  .list-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-align: center;
+
+    @media (width >= 768px) {
+      font-size: 1.5rem;
+    }
+
+    strong {
+      font-size: 1.5rem;
+      color: #368d47;
+
+      @media (width >= 768px) {
+        font-size: 2.5rem;
+      }
+    }
+  }
 }
 
 .studio-list {
@@ -1333,5 +1397,13 @@ footer {
 .sta-section {
   .cta-button-wrapper {
     bottom: 5%;
+  }
+
+  .sta-position {
+    top: 7%;
+
+    @media (width >= 768px) {
+      top: 10%;
+    }
   }
 }
