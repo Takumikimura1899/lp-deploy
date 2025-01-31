@@ -700,7 +700,11 @@ main {
 
 /* faq section */
 .section-faq {
-  padding: 5rem;
+  padding: 3rem 0;
+
+  @media (width >= 768px) {
+    padding: 5rem 0;
+  }
 }
 
 .faq-accordion-list {
@@ -710,9 +714,14 @@ main {
 }
 
 .faq-accordion {
-  width: 80%;
+  width: 94%;
   padding-left: 1rem;
+  margin: 0 auto;
   border-left: 2px solid #368d47;
+
+  @media (width >= 768px) {
+    width: 80%;
+  }
 }
 
 .faq-accordion-body {
@@ -1182,6 +1191,8 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
   margin-bottom: 40px;
   text-align: center;
 
