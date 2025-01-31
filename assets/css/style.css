@@ -244,40 +244,10 @@ main {
   }
 
   .kahun-content {
-    padding: 0 20px;
+    padding: 40px 20px;
     margin-top: 20px;
     font-size: 16px;
     font-weight: 500;
-
-    .highlight {
-      position: relative;
-      font-weight: 900;
-    }
-
-    .highlight::after {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      display: inline-block;
-      width: 100%;
-      height: 15px;
-      content: '';
-      background: #fef1004d;
-    }
-
-    @media (width >= 768px) {
-      .highlight::after {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        z-index: -1;
-        width: 100%;
-        height: 15px;
-        content: '';
-        background: #fef1004d;
-      }
-    }
   }
 
   .kahun-image {
@@ -1123,5 +1093,22 @@ footer {
   100% {
     opacity: 0;
     transform: scale(1.2); /* 最終的に大きくして消える */
+  }
+}
+
+.highlight {
+  position: relative;
+  display: inline-block;
+  font-weight: 900;
+
+  &::before {
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 0.6em;
+    content: '';
+    background-color: #fef1004d;
   }
 }
