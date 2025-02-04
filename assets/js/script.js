@@ -79,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const accordionHeaders = document.querySelectorAll('.doctor-column-title');
-  console.log(accordionHeaders);
 
   accordionHeaders.forEach((header) => {
     header.addEventListener('click', () => {
@@ -89,11 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      const content = header.nextElementSibling;
-      if (content.style.display === 'block') {
-        content.style.display = 'none';
+      const content = header.parentElement;
+      if (content.classList.contains('initially-open')) {
+        content.classList.remove('initially-open');
       } else {
-        content.style.display = 'block';
+        content.classList.add('initially-open');
       }
     });
   });
