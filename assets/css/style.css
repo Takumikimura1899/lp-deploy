@@ -528,7 +528,7 @@ main {
 
   @media (width >= 768px) {
     flex-direction: row;
-    gap: 3rem;
+    gap: 2.5rem;
   }
 
   .doctor-info {
@@ -538,13 +538,66 @@ main {
   }
 
   .doctor-image {
+    width: 100%;
     max-width: 332px;
+    height: auto;
+  }
+}
+
+.doctor-column-item {
+  p {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.section-doctor-title {
+  font-size: clamp(1rem, 0.648rem + 1.5vw, 2rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+.doctor-info-description {
+  p {
+    font-size: 0.75rem;
+    font-weight: 500;
   }
 
+  .name {
+    font-size: clamp(1rem, 0.912rem + 0.38vw, 1.25rem);
+    font-weight: 700;
+  }
+}
+
+.doctor-column-list {
   .doctor-column-title {
     padding: 0.5em;
+    font-size: clamp(0.875rem, 0.743rem + 0.56vw, 1.25rem);
     font-weight: 700;
+    cursor: pointer;
     background-color: #f6f6f6;
+
+    @media (width >= 768px) {
+      cursor: default;
+    }
+  }
+
+  .accordion-button {
+    width: 100%;
+  }
+
+  .accordion-content {
+    display: none;
+
+    @media (width >= 768px) {
+      display: block;
+    }
+  }
+
+  .initially-open {
+    .accordion-content {
+      display: block;
+    }
   }
 }
 

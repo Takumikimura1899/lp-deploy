@@ -76,3 +76,25 @@ document.addEventListener('DOMContentLoaded', () => {
     initiallyActiveContainer.style.display = 'block';
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const accordionHeaders = document.querySelectorAll('.doctor-column-title');
+  console.log(accordionHeaders);
+
+  accordionHeaders.forEach((header) => {
+    header.addEventListener('click', () => {
+      const isAccordion = window.matchMedia('(max-width: 767px)').matches;
+
+      if (!isAccordion) {
+        return;
+      }
+
+      const content = header.nextElementSibling;
+      if (content.style.display === 'block') {
+        content.style.display = 'none';
+      } else {
+        content.style.display = 'block';
+      }
+    });
+  });
+});
