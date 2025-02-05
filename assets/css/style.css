@@ -1257,6 +1257,11 @@ main {
     font-size: 1.25rem;
   }
 
+  .business-time {
+    display: flex;
+    flex-direction: row;
+  }
+
   .googlemap-link {
     margin-left: 0.3rem;
     font-size: 1em;
