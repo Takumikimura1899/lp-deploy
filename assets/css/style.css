@@ -1257,6 +1257,7 @@ main {
     font-size: 1.25rem;
   }
 
+  .access-info,
   .business-time {
     display: flex;
     flex-direction: row;
